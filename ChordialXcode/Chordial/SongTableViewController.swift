@@ -9,6 +9,8 @@
 import UIKit
 
 class SongTableViewController: UITableViewController {
+    
+    var songs = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
