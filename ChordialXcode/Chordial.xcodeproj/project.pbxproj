@@ -15,6 +15,7 @@
 		4C0A05401DBBDC9D00B01C5F /* ChordialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0A053F1DBBDC9D00B01C5F /* ChordialTests.swift */; };
 		4C0A054B1DBBDC9D00B01C5F /* ChordialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0A054A1DBBDC9D00B01C5F /* ChordialUITests.swift */; };
 		4C9B2C451DBD5B9700D0DABF /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9B2C441DBD5B9700D0DABF /* SongTableViewCell.swift */; };
+		4C9B2C471DBD5FA300D0DABF /* SongTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9B2C461DBD5FA300D0DABF /* SongTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		4C0A054A1DBBDC9D00B01C5F /* ChordialUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordialUITests.swift; sourceTree = "<group>"; };
 		4C0A054C1DBBDC9D00B01C5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C9B2C441DBD5B9700D0DABF /* SongTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
+		4C9B2C461DBD5FA300D0DABF /* SongTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				4C0A052A1DBBDC9D00B01C5F /* AppDelegate.swift */,
 				4C0A052C1DBBDC9D00B01C5F /* ViewController.swift */,
 				4C0A052E1DBBDC9D00B01C5F /* Main.storyboard */,
+				4C9B2C461DBD5FA300D0DABF /* SongTableViewController.swift */,
 				4C9B2C441DBD5B9700D0DABF /* SongTableViewCell.swift */,
 				4C0A05311DBBDC9D00B01C5F /* Assets.xcassets */,
 				4C0A05331DBBDC9D00B01C5F /* LaunchScreen.storyboard */,
@@ -265,6 +268,7 @@
 			files = (
 				4C9B2C451DBD5B9700D0DABF /* SongTableViewCell.swift in Sources */,
 				4C0A052D1DBBDC9D00B01C5F /* ViewController.swift in Sources */,
+				4C9B2C471DBD5FA300D0DABF /* SongTableViewController.swift in Sources */,
 				4C0A052B1DBBDC9D00B01C5F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
