@@ -12,7 +12,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     
-    // MARK: Properties
+    // Mark: Properties
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -21,6 +21,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     // MARK: UITextFieldDelegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Hide the keyboard.
+        if textField == passwordField{
+            login()
+        }
         textField.resignFirstResponder()
         return true
     }
@@ -29,30 +32,25 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
-    //Character Limit
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard let text = textField.text else { return true }
-        
-        let newLength = text.characters.count + string.characters.count - range.length
-        NSLog(string)
-        NSLog(String(string.characters.count))
-        NSLog(String(describing: range.toRange()))
-        let correctSize = newLength <= 100 // Bool
-        
-        
-        let disallowedCharacterSet = NSCharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-").inverted
-        let replacementStringIsLegal = string.rangeOfCharacter(from: disallowedCharacterSet) == nil
-        
-        return correctSize && replacementStringIsLegal
-        
-        
-    }
+
     // MARK: Actions
-    @IBAction func login(_ sender: UIButton) {
-        welcomeLabel.text = "Hello, " + usernameField.text!
+    @IBAction func loginClicked(_ sender: AnyObject) {
+        login()
     }
     
+    func login(){
+        //Implement backend call
+        let username = usernameField.text
+        let password = passwordField.text
+        if username == "admin" && password == "admin"{
+        NSLog("Logged In")
+        goToHomePage()
+        }
+        else{
+            displayLoginErrorMessage()
+        }
+
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,9 +58,31 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Handle the text field’s user input through delegate callbacks.
         usernameField.delegate = self
         passwordField.delegate = self
+        
     }
     
+    func goToHomePage(){
+        
+        NSLog("Trying to segue")
+        self.performSegue(withIdentifier: "goHome", sender: self)
+        
+    }
     
+    func displayLoginErrorMessage(){
+        let alertController = UIAlertController(title: "Login Failed", message:
+            "\nUsername and/or password not found", preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    func validateUsernameText(){
+    
+    }
+    
+    func validatePasswordText(){
+        
+        
+    }
     
     
 
